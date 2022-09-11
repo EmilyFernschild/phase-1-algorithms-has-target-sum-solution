@@ -1,5 +1,22 @@
+// function hasTargetSum(array, target) {
+//   for (let i = 0; i < array.length; i++){
+//     const complement = target - array[i];
+//     for (let j = i + 1; i < array.length; j++){
+//       if (array[j] === complement) return true;
+//     }
+//   }
+//   return false;
+// }
+
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seenNumbers = {}
+    for (const number of array){
+      //console.log(seenNumbers);
+      const complement = target - number;
+      if (seenNumbers[complement]) return true;
+      seenNumbers[number] = true;
+    }
+    return false;
 }
 
 /* 
